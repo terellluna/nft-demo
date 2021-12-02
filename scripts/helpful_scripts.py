@@ -6,6 +6,7 @@ STARTING_PRICE = 200000000000
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local", "mainnet-fork"]
 OPENSEA_URL = "https://testnets.opensea.io/assets/{}/{}"
+BREED_MAPPING = {0: "PUG", 1: "SHIBA_INU", 2: "ST_BERNARD"}
 
 
 def get_account(index=None, id=None):
@@ -71,3 +72,7 @@ def fund_with_link(
     tx.wait(1)
     print(f"Funded {contract_address}")
     return tx
+
+
+def get_breed(breed_number):
+    return BREED_MAPPING[breed_number]
